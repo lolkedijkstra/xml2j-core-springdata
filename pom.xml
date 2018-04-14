@@ -4,12 +4,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <properties>
+  	<slf4j.version>1.7.25</slf4j.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
   <groupId>com.xml2j</groupId>
-  <artifactId>xml2j-springdata</artifactId>
+  <artifactId>xml2j-core-springdata</artifactId>
   <version>2.4.1</version>
   <name>XML2J LIB Spring Data</name>
   <description>XML2J LIB Spring Data</description>
@@ -35,7 +36,7 @@
 	<dependency>
   		<groupId>org.slf4j</groupId>
   		<artifactId>slf4j-api</artifactId>
-  		<version>1.7.21</version>
+  		<version>${slf4j.version}</version>
 	</dependency>  
    </dependencies>
 </project>
