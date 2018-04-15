@@ -1,7 +1,7 @@
 package com.xml2j.xml.core;
 
 /********************************************************************************
-Copyright 2017 Lolke B. Dijkstra
+Copyright 2016 Lolke B. Dijkstra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
 this software and associated documentation files (the "Software"), to deal in the
@@ -28,15 +28,13 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.annotation.Transient;
 
 import com.xml2j.util.Printer;
+import org.springframework.data.annotation.Transient;
 
 
 /**
  * ComplexDataType class is the base class for all complex data types.
- * This type has been annotated for use with Spring Data.
- * 
  * @author Lolke B. Dijkstra
  */
 public abstract class ComplexDataType implements DataType, Serializable {
@@ -46,17 +44,16 @@ public abstract class ComplexDataType implements DataType, Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private static final Logger logger = LoggerFactory.getLogger(ComplexDataType.class);
-	
+
 	/** name of the element. */
-	// --- if you don't want this to be stored uncomment @Transient
-//	@Transient
 	private String xmlElementName = null;
 	/** list of attributes of element. */
 	private final Map<String, String> atts = new HashMap<>();
 	/** content of element. */
 	private String content = null;
 	/** parent data. */
-	// --- this must be @Transient (circular dependency)
+
+	// transient prevents circular dependency in spring-data
 	@Transient
 	private ComplexDataType parent = null;
 	
