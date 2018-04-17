@@ -134,7 +134,7 @@ public abstract class ComplexDataType implements DataType, Serializable {
 	 * @param attrName name of the attribute
 	 * @param data content of the attribute
 	 */
-	protected void setAttr(String attrName, String data) {
+	public void setAttr(String attrName, String data) {
 		if( logger.isTraceEnabled())
 			logger.trace("setAttr({},{})", attrName, data);
 
@@ -147,7 +147,7 @@ public abstract class ComplexDataType implements DataType, Serializable {
 	 * @param attrName the name of the attribute
 	 * @return it's value
 	 */
-	protected String getAttr(String attrName) {
+	public String getAttr(String attrName) {
 		return atts.get(attrName);
 	}
 	
